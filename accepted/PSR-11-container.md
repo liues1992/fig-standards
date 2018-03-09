@@ -2,7 +2,7 @@
 
 此文描述了依赖注入容器的通用接口。
 
-`ContainerInterface`的目标：指定PHP框架和库中，从容器获得对象和参数的的标准（在此文中叫做条目entry）。
+`ContainerInterface`的目标：制定PHP框架和库中，从容器获得对象和参数的的标准（在此文中叫做条目`entry`）。
 
 以下关键词的定义和[RFC 2119][]保持一致： 必须（"MUST"）, 不能（"MUST NOT"）, 必须（"REQUIRED"）, 应该（"SHALL"）, 不应该（"SHALL NOT"）, 应该（"SHOULD"）,
 不应该（"SHOULD NOT"）, 推荐（"RECOMMENDED"）, 可以（"MAY"）, 可选（"OPTIONAL"）
@@ -22,8 +22,8 @@
 #### 1.1.2 从容器中读取数据
 
 - `Psr\Container\ContainerInterface` 暴露两个方法：`get` 和 `has`。
-- `get`严格接收一个参数：一个**必须（MUST）**是字符串的条目标识符。
-  `get`可以返回任何值，在容器条目未找到时，抛出一个`NotFoundExceptionInterface`异常。两次连续的`get`调用**应该（SHOULD）**返回同样的值，但是根据实现者或者用户的配置，返回不同的值也是可能的，所以用户**不应该（SHOULD NOT）**依赖两次调用返回相同值的行为。
+- `get`严格接收一个参数：一个 **必须（MUST）** 是字符串的条目标识符。
+  `get`可以返回任何值，在容器条目未找到时，抛出一个`NotFoundExceptionInterface`异常。两次连续的`get`调用 **应该（SHOULD）** 返回同样的值，但是根据实现者或者用户的配置，返回不同的值也是可能的，所以用户 **不应该（SHOULD NOT）** 依赖两次调用返回相同值的行为。
 
 - `has` takes one unique parameter: an entry identifier, which MUST be a string.
   `has` MUST return `true` if an entry identifier is known to the container and `false` if it is not.
