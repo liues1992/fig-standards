@@ -1,3 +1,19 @@
+翻译说明：
+======
+此Github项目的目的是对FIG官方Github项目（ https://github.com/php-fig/fig-standards ）做全量的中文翻译并保持更新。
+
+术语
+------------------------------------
+- interoperability 互通性
+- Framework Interoperability Group 框架互通性小组
+- vendor 组织名称
+- PHP Standard Recommendation PHP规范建议
+
+一些原则
+------------------------------------
+- 尽可能使用中文全角标点符号。
+- 中文和英文之间不使用空格或者其他符号分隔。
+
 PHP框架互通性小组（FIG）
 ====================================
 
