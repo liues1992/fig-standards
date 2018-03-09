@@ -1,4 +1,4 @@
-# Basic Coding Standard
+# 基础代码规范
 
 This section of the standard comprises what should be considered the standard
 coding elements that are required to ensure a high level of technical
@@ -12,36 +12,36 @@ interpreted as described in [RFC 2119].
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
 
-## 1. Overview
+## 1. 概述
 
-- Files MUST use only `<?php` and `<?=` tags.
+- 文件**必须（MUST）**只使用 `<?php` 和 `<?=` 标签.
 
-- Files MUST use only UTF-8 without BOM for PHP code.
+- PHP代码文件**必须（MUST）**只使用不带BOM的UTF-8编码。
 
 - Files SHOULD *either* declare symbols (classes, functions, constants, etc.)
   *or* cause side-effects (e.g. generate output, change .ini settings, etc.)
   but SHOULD NOT do both.
 
-- Namespaces and classes MUST follow an "autoloading" PSR: [[PSR-0], [PSR-4]].
+- 命名空间和类**必须（MUST）**遵循自动加载规范[[PSR-0], [PSR-4]]。
 
-- Class names MUST be declared in `StudlyCaps`.
+- 类名**必须（MUST）**是首字母大写驼峰式（`StudlyCaps`）命名。
 
-- Class constants MUST be declared in all upper case with underscore separators.
+- 类常量**必须**是全大写，用下划线分开。
 
-- Method names MUST be declared in `camelCase`.
+- 方法**必须**x是首字母小写驼峰式（`camelCase`）命名。
 
-## 2. Files
+## 2. 文件
 
-### 2.1. PHP Tags
+### 2.1. PHP标签
 
 PHP code MUST use the long `<?php ?>` tags or the short-echo `<?= ?>` tags; it
 MUST NOT use the other tag variations.
 
-### 2.2. Character Encoding
+### 2.2. 字符编码
 
 PHP code MUST use only UTF-8 without BOM.
 
-### 2.3. Side Effects
+### 2.3. 副作用
 
 A file SHOULD declare new symbols (classes, functions, constants,
 etc.) and cause no other side effects, or it SHOULD execute logic with side
@@ -97,7 +97,7 @@ if (! function_exists('bar')) {
 }
 ~~~
 
-## 3. Namespace and Class Names
+## 3. 命名空间和类名
 
 Namespaces and classes MUST follow an "autoloading" PSR: [[PSR-0], [PSR-4]].
 
@@ -112,7 +112,7 @@ For example:
 
 ~~~php
 <?php
-// PHP 5.3 and later:
+// PHP 5.3 及以后:
 namespace Vendor\Model;
 
 class Foo
@@ -125,20 +125,21 @@ of `Vendor_` prefixes on class names.
 
 ~~~php
 <?php
-// PHP 5.2.x and earlier:
+// PHP 5.2.x 及以前:
 class Vendor_Model_Foo
 {
 }
 ~~~
 
-## 4. Class Constants, Properties, and Methods
+## 4. 类的常量属性和方法
 
 The term "class" refers to all classes, interfaces, and traits.
 
-### 4.1. Constants
+### 4.1. 常量
 
-Class constants MUST be declared in all upper case with underscore separators.
 For example:
+类常量**必须（MUST）**是全部大写，下划线作为分隔符。
+例如：
 
 ~~~php
 <?php
@@ -151,7 +152,7 @@ class Foo
 }
 ~~~
 
-### 4.2. Properties
+### 4.2. 属性
 
 This guide intentionally avoids any recommendation regarding the use of
 `$StudlyCaps`, `$camelCase`, or `$under_score` property names.
@@ -160,6 +161,8 @@ Whatever naming convention is used SHOULD be applied consistently within a
 reasonable scope. That scope may be vendor-level, package-level, class-level,
 or method-level.
 
-### 4.3. Methods
+### 4.3. 方法
 
-Method names MUST be declared in `camelCase()`.
+方法名必须是首字母小写驼峰式`camelCase()`。
+
+

@@ -1,4 +1,4 @@
-Common Interface for Caching Libraries
+缓存库的通用接口
 ======================================
 
 This document describes a simple yet extensible interface for a cache item and
@@ -281,3 +281,5 @@ interface InvalidArgumentException extends CacheException
 {
 }
 ~~~
+
+

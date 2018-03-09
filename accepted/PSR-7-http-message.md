@@ -1,4 +1,4 @@
-# HTTP message interfaces
+# HTTP消息接口
 
 This document describes common interfaces for representing HTTP messages as
 described in [RFC 7230](http://tools.ietf.org/html/rfc7230) and
@@ -1869,3 +1869,5 @@ interface UploadedFileInterface
     public function getClientMediaType();
 }
 ~~~
+
+

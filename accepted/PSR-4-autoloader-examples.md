@@ -1,9 +1,9 @@
-Example Implementations of PSR-4
+PSR-4代码实现示例
 ================================
 
 The following examples illustrate PSR-4 compliant code:
 
-Closure Example
+闭包示例
 ---------------
 
 ~~~php
@@ -50,7 +50,7 @@ spl_autoload_register(function ($class) {
 });
 ~~~
 
-Class Example
+类示例
 -------------
 
 The following is an example class implementation to handle multiple
@@ -246,7 +246,7 @@ class Psr4AutoloaderClass
 }
 ~~~
 
-### Unit Tests
+### 单元测试
 
 The following example is one way of unit testing the above class loader:
 
@@ -348,3 +348,5 @@ class Psr4AutoloaderClassTest extends \PHPUnit_Framework_TestCase
     }
 }
 ~~~
+
+

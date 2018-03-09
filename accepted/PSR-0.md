@@ -1,32 +1,24 @@
-Autoloading Standard
+自动加载规范
 ====================
 
-> **Deprecated** - As of 2014-10-21 PSR-0 has been marked as deprecated. [PSR-4] is now recommended
-as an alternative.
+> **已废弃** - PSR-0在2014年10月21日被废弃。现在推荐使用[PSR-4]作为替代品。
 
 [PSR-4]: http://www.php-fig.org/psr/psr-4/
 
-The following describes the mandatory requirements that must be adhered
-to for autoloader interoperability.
+本文描述了通用自动加载器 (autoloader) 必须遵循的规范。
 
-Mandatory
+规范说明
 ---------
 
-* A fully-qualified namespace and class must have the following
-  structure `\<Vendor Name>\(<Namespace>\)*<Class Name>`
-* Each namespace must have a top-level namespace ("Vendor Name").
-* Each namespace can have as many sub-namespaces as it wishes.
-* Each namespace separator is converted to a `DIRECTORY_SEPARATOR` when
-  loading from the file system.
-* Each `_` character in the CLASS NAME is converted to a
-  `DIRECTORY_SEPARATOR`. The `_` character has no special meaning in the
-  namespace.
-* The fully-qualified namespace and class are suffixed with `.php` when
-  loading from the file system.
-* Alphabetic characters in vendor names, namespaces, and class names may
-  be of any combination of lower case and upper case.
+* 完全限定的命名空间和类**必须**遵循这样的结构：`\<组织名称>\(<命名空间>\)*<类名>`
+* 命名空间**必须**包含一个`组织名称`作为顶级命名空间。
+* 命名空间**可以**有多个子命名空间。
+* 当从文件系统加载相应文件时，命名空间分隔符会被转换为`DIRECTORY_SEPARATOR`（文件系统中的目录分隔符）。
+* **类名**中的下划线（`_`）会被转换为`DIRECTORY_SEPARATOR`（文件系统中的目录分隔符）。命名空间中的下划线(`_`)没有特殊含义。
+* 当从文件系统加载相应完全限定的命名空间和类时，会加上一个`.php`后缀。
+* `组织名称`, `命名空间`, 和 `类名`中的字母可以是大写或者小写。
 
-Examples
+示例
 --------
 
 * `\Doctrine\Common\IsolatedClassLoader` => `/path/to/project/lib/vendor/Doctrine/Common/IsolatedClassLoader.php`
@@ -34,22 +26,19 @@ Examples
 * `\Zend\Acl` => `/path/to/project/lib/vendor/Zend/Acl.php`
 * `\Zend\Mail\Message` => `/path/to/project/lib/vendor/Zend/Mail/Message.php`
 
-Underscores in Namespaces and Class Names
+命名空间和类名中的下划线
 -----------------------------------------
 
 * `\namespace\package\Class_Name` => `/path/to/project/lib/vendor/namespace/package/Class/Name.php`
 * `\namespace\package_name\Class_Name` => `/path/to/project/lib/vendor/namespace/package_name/Class/Name.php`
 
-The standards we set here should be the lowest common denominator for
-painless autoloader interoperability. You can test that you are
-following these standards by utilizing this sample SplClassLoader
-implementation which is able to load PHP 5.3 classes.
 
-Example Implementation
+这里设定的规范是保证自动加载器互通性的最低标准规范。你可以用下述的SplClassLoader样例来检测你自己的实现是否遵循规范。
+
+代码实现示例
 ----------------------
 
-Below is an example function to simply demonstrate how the above
-proposed standards are autoloaded.
+以下示例函数展示了如何按照规范进行自动加载。
 
 ~~~php
 <?php
@@ -71,13 +60,10 @@ function autoload($className)
 spl_autoload_register('autoload');
 ~~~
 
-SplClassLoader Implementation
+SplClassLoader 示例
 -----------------------------
 
-The following gist is a sample SplClassLoader implementation that can
-load your classes if you follow the autoloader interoperability
-standards proposed above. It is the current recommended way to load PHP
-5.3 classes that follow these standards.
+以下gist是一个SplClassLoader示例，如果你遵循了规范，可以用它实现自动加载类文件。这是目前推荐的PHP 5.3的类文件载入方式。
 
 * [http://gist.github.com/221634](http://gist.github.com/221634)
 

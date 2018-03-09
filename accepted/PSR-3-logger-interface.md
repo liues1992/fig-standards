@@ -1,4 +1,4 @@
-Logger Interface
+日志接口
 ================
 
 This document describes a common interface for logging libraries.
@@ -302,3 +302,5 @@ class LogLevel
     const DEBUG     = 'debug';
 }
 ~~~
+
+

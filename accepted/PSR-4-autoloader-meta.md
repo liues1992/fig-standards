@@ -1,7 +1,7 @@
-PSR-4 Meta Document
+PSR-4 元文档
 ===================
 
-1. Summary
+1. 概述
 ----------
 
 The purpose is to specify the rules for an interoperable PHP autoloader that
@@ -9,7 +9,7 @@ maps namespaces to file system paths, and that can co-exist with any other SPL
 registered autoloader.  This would be an addition to, not a replacement for,
 PSR-0.
 
-2. Why Bother?
+2. 为什么需要PSR-4?
 --------------
 
 ### History of PSR-0
@@ -123,7 +123,7 @@ acceptable to remove them here as well.
 3. Scope
 --------
 
-### 3.1 Goals
+### 3.1 目标
 
 - Retain the PSR-0 rule that implementors MUST use at least two namespace
   levels: a vendor name, and package name within that vendor.
@@ -136,14 +136,14 @@ acceptable to remove them here as well.
 
 - End the honoring of underscores in class names as directory separators
 
-### 3.2 Non-Goals
+### 3.2 什么不是目标
 
 - Provide a general transformation algorithm for non-class resources
 
 4. Approaches
 -------------
 
-### 4.1 Chosen Approach
+### 4.1 选中的的方式
 
 This approach retains key characteristics of PSR-0 while eliminating the
 deeper directory structures it requires. In addition, it specifies certain
@@ -180,23 +180,22 @@ Cons:
   determine where it is in the file system (the "class-to-file" convention
   inherited from Horde/PEAR).
 
-### 4.2 Alternative: Stay With PSR-0 Only
+### 4.2 其他方案: 依然使用PSR-0
 
 Staying with PSR-0 only, although reasonable, does leave us with relatively
 deeper directory structures.
 
-Pros:
+优点：
 
-- No need to change anyone's habits or implementations
+- 不需要改变大家的习惯和已有实现。
 
-Cons:
+缺点：
 
-- Leaves us with deeper directory structures
+- 目录结构太深。
 
-- Leaves us with underscores in the class name being honored as directory
-  separators
+- 类名中的下划线会转换成目录分隔符。
 
-### 4.3 Alternative: Split Up Autoloading And Transformation
+### 4.3 其他方案: Split Up Autoloading And Transformation
 
 Beau Simensen and others suggested that the transformation algorithm might be
 split out from the autoloading proposal so that the transformation rules
@@ -213,7 +212,7 @@ Cons:
 
 - Not in line with the wishes of poll respondents and some collaborators
 
-### 4.4 Alternative: Use More Imperative And Narrative Language
+### 4.4 其他方案：使用命令式的语言 Use More Imperative And Narrative Language
 
 After the second vote was pulled by a Sponsor after hearing from multiple +1
 voters that they supported the idea but did not agree with (or understand) the
@@ -224,25 +223,25 @@ Simensen started an experimental revision with an eye to PSR-0; the Editor and
 Sponsors favored this more terse approach and shepherded the version now under
 consideration, written by Paul M. Jones and contributed to by many.
 
-### Compatibility Note with PHP 5.3.2 and below
+### PHP 5.3.2及以下的兼容性说明
 
 PHP versions before 5.3.3 do not strip the leading namespace separator, so
 the responsibility to look out for this falls on the implementation. Failing
 to strip the leading namespace separator could lead to unexpected behavior.
 
-5. People
+5. 参与者
 ---------
 
-### 5.1 Editor
+### 5.1 编辑
 
 - Paul M. Jones, Solar/Aura
 
-### 5.2 Sponsors
+### 5.2 赞助者
 
 - Phil Sturgeon, PyroCMS (Coordinator)
 - Larry Garfield, Drupal
 
-### 5.3 Contributors
+### 5.3 贡献者列表
 
 - Andreas Hennings
 - Bernhard Schussek
@@ -252,7 +251,7 @@ to strip the leading namespace separator could lead to unexpected behavior.
 - Paul Dragoonis
 - Too many others to name and count
 
-6. Votes
+### 6. 投票
 --------
 
 - **Entrance Vote:** <https://groups.google.com/d/msg/php-fig/_LYBgfcEoFE/ZwFTvVTIl4AJ>
@@ -282,3 +281,5 @@ to strip the leading namespace separator could lead to unexpected behavior.
 - [Towards a Package Oriented Autoloader](https://groups.google.com/forum/#!searchin/php-fig/package$20oriented$20autoloader/php-fig/JdR-g8ZxKa8/jJr80ard-ekJ)
 - [List of Alternative PSR-4 Proposals](https://groups.google.com/forum/#!topic/php-fig/oXr-2TU1lQY)
 - [Summary of [post-Acceptance Vote pull] PSR-4 discussions](https://groups.google.com/forum/#!searchin/php-fig/psr-4$20summary/php-fig/bSTwUX58NhE/YPcFgBjwvpEJ)
+
+

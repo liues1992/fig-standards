@@ -1,4 +1,4 @@
-# Coding Style Guide
+# 代码风格指南
 
 This guide extends and expands on [PSR-1], the basic coding standard.
 
@@ -20,7 +20,7 @@ interpreted as described in [RFC 2119].
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
 [PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
 
-## 1. Overview
+## 1. 概述
 
 - Code MUST follow a "coding style guide" PSR [[PSR-1]].
 
@@ -51,7 +51,7 @@ interpreted as described in [RFC 2119].
 - Opening parentheses for control structures MUST NOT have a space after them,
   and closing parentheses for control structures MUST NOT have a space before.
 
-### 1.1. Example
+### 1.1. 示例
 
 This example encompasses some of the rules below as a quick overview:
 
@@ -83,13 +83,13 @@ class Foo extends Bar implements FooInterface
 }
 ~~~
 
-## 2. General
+## 2. 通用
 
-### 2.1. Basic Coding Standard
+### 2.1. 基本编码规范
 
 Code MUST follow all rules outlined in [PSR-1].
 
-### 2.2. Files
+### 2.2. 文件
 
 All PHP files MUST use the Unix LF (linefeed) line ending.
 
@@ -97,7 +97,7 @@ All PHP files MUST end with a single blank line.
 
 The closing `?>` tag MUST be omitted from files containing only PHP.
 
-### 2.3. Lines
+### 2.3. 行
 
 There MUST NOT be a hard limit on line length.
 
@@ -114,7 +114,7 @@ blocks of code.
 
 There MUST NOT be more than one statement per line.
 
-### 2.4. Indenting
+### 2.4. 缩进
 
 Code MUST use an indent of 4 spaces, and MUST NOT use tabs for indenting.
 
@@ -123,7 +123,7 @@ Code MUST use an indent of 4 spaces, and MUST NOT use tabs for indenting.
 > also makes it easy to insert fine-grained sub-indentation for inter-line
 > alignment.
 
-### 2.5. Keywords and True/False/Null
+### 2.5. 关键词和True/False/Null
 
 PHP [keywords] MUST be in lower case.
 
@@ -131,7 +131,7 @@ The PHP constants `true`, `false`, and `null` MUST be in lower case.
 
 [keywords]: http://php.net/manual/en/reserved.keywords.php
 
-## 3. Namespace and Use Declarations
+## 3. 命名空间和use声明
 
 When present, there MUST be one blank line after the `namespace` declaration.
 
@@ -156,11 +156,11 @@ use OtherVendor\OtherPackage\BazClass;
 
 ~~~
 
-## 4. Classes, Properties, and Methods
+## 4. 类，属性和方法
 
 The term "class" refers to all classes, interfaces, and traits.
 
-### 4.1. Extends and Implements
+### 4.1. 继承和实现
 
 The `extends` and `implements` keywords MUST be declared on the same line as
 the class name.
@@ -203,7 +203,7 @@ class ClassName extends ParentClass implements
 }
 ~~~
 
-### 4.2. Properties
+### 4.2. 属性
 
 Visibility MUST be declared on all properties.
 
@@ -226,7 +226,7 @@ class ClassName
 }
 ~~~
 
-### 4.3. Methods
+### 4.3. 方法
 
 Visibility MUST be declared on all methods.
 
@@ -254,7 +254,7 @@ class ClassName
 }
 ~~~
 
-### 4.4. Method Arguments
+### 4.4. 方法参数
 
 In the argument list, there MUST NOT be a space before each comma, and there
 MUST be one space after each comma.
@@ -299,7 +299,7 @@ class ClassName
 }
 ~~~
 
-### 4.5. `abstract`, `final`, and `static`
+### 4.5. `abstract`, `final`, 和 `static`
 
 When present, the `abstract` and `final` declarations MUST precede the
 visibility declaration.
@@ -324,7 +324,7 @@ abstract class ClassName
 }
 ~~~
 
-### 4.6. Method and Function Calls
+### 4.6. 方法和函数调用
 
 When making a method or function call, there MUST NOT be a space between the
 method or function name and the opening parenthesis, there MUST NOT be a space
@@ -352,7 +352,7 @@ $foo->bar(
 );
 ~~~
 
-## 5. Control Structures
+## 5. 控制结构
 
 The general style rules for control structures are as follows:
 
@@ -478,7 +478,7 @@ try {
 }
 ~~~
 
-## 6. Closures
+## 6. 闭包
 
 Closures MUST be declared with a space after the `function` keyword, and a
 space before and after the `use` keyword.
@@ -583,7 +583,7 @@ $foo->bar(
 );
 ~~~
 
-## 7. Conclusion
+## 7. 结论
 
 There are many elements of style and practice intentionally omitted by this
 guide. These include but are not limited to:
@@ -605,12 +605,12 @@ guide. These include but are not limited to:
 Future recommendations MAY revise and extend this guide to address those or
 other elements of style and practice.
 
-## Appendix A. Survey
+## 附录A：调查问卷
 
 In writing this style guide, the group took a survey of member projects to
 determine common practices.  The survey is retained herein for posterity.
 
-### A.1. Survey Data
+### A.1. 问卷数据
 
     url,http://www.horde.org/apps/horde/docs/CODING_STANDARDS,http://pear.php.net/manual/en/standards.php,http://solarphp.com/manual/appendix-standards.style,http://framework.zend.com/manual/en/coding-standard.html,http://symfony.com/doc/2.0/contributing/code/standards.html,http://www.ppi.io/docs/coding-standards.html,https://github.com/ezsystems/ezp-next/wiki/codingstandards,http://book.cakephp.org/2.0/en/contributing/cakephp-coding-conventions.html,https://github.com/UnionOfRAD/lithium/wiki/Spec%3A-Coding,http://drupal.org/coding-standards,http://code.google.com/p/sabredav/,http://area51.phpbb.com/docs/31x/coding-guidelines.html,https://docs.google.com/a/zikula.org/document/edit?authkey=CPCU0Us&hgd=1&id=1fcqb93Sn-hR9c0mkN6m_tyWnmEvoswKBtSc0tKkZmJA,http://www.chisimba.com,n/a,https://github.com/Respect/project-info/blob/master/coding-standards-sample.php,n/a,Object Calisthenics for PHP,http://doc.nette.org/en/coding-standard,http://flow3.typo3.org,https://github.com/propelorm/Propel2/wiki/Coding-Standards,http://developer.joomla.org/coding-standards.html
     voting,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,yes,no,no,no,?,yes,no,yes
@@ -636,7 +636,7 @@ determine common practices.  The survey is retained herein for posterity.
     blank_line_after_php,no,no,no,no,yes,no,no,no,no,yes,yes,no,no,yes,?,yes,yes,no,yes,no,yes,no
     class_method_control_brace,next/next/same,next/next/same,next/next/same,next/next/same,next/next/same,same/same/same,next/next/next,same/same/same,same/same/same,same/same/same,same/same/same,next/next/next,next/next/same,next/same/same,next/next/next,next/next/same,next/next/same,next/next/same,next/next/same,same/same/same,next/next/same,next/next/next
 
-### A.2. Survey Legend
+### A.2. 问卷说明
 
 `indent_type`:
 The type of indenting. `tab` = "Use a tab", `2` or `4` = "number of spaces"
@@ -701,7 +701,7 @@ Is there a blank line after the opening PHP tag?
 `class_method_control_brace`:
 A summary of what line the opening braces go on for classes, methods, and control structures.
 
-### A.3. Survey Results
+### A.3. 问卷结果
 
     indent_type:
         tab: 7
@@ -783,3 +783,5 @@ A summary of what line the opening braces go on for classes, methods, and contro
         next/next/same: 11
         next/same/same: 1
         same/same/same: 6
+
+
