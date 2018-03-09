@@ -2,6 +2,8 @@
 ======
 此Github项目的目的是对FIG官方Github项目（ https://github.com/php-fig/fig-standards ）做全量的中文翻译并保持更新。
 
+[所有PSR列表](https://github.com/liues1992/fig-standards/tree/master/index.md)
+
 术语
 ------------------------------------
 - interoperability 互通性
@@ -13,6 +15,8 @@
 ------------------------------------
 - 尽可能使用中文全角标点符号。
 - 中文和英文之间不使用空格或者其他符号分隔。
+
+
 
 PHP框架互通性小组（FIG）
 ====================================
