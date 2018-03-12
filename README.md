@@ -10,6 +10,7 @@
 - Framework Interoperability Group 框架互通性小组
 - vendor 组织名称
 - PHP Standard Recommendation PHP规范建议
+- fully-qualified class name 完全限定的类名
 
 一些原则
 ------------------------------------

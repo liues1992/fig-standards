@@ -4,8 +4,8 @@
 
 `ContainerInterface`的目标：制定PHP框架和库中，从容器获得对象和参数的的标准（在此文中叫做条目`entry`）。
 
-以下关键词的定义和[RFC 2119][]保持一致： 必须（"MUST"）, 不能（"MUST NOT"）, 必须（"REQUIRED"）, 应该（"SHALL"）, 不应该（"SHALL NOT"）, 应该（"SHOULD"）,
-不应该（"SHOULD NOT"）, 推荐（"RECOMMENDED"）, 可以（"MAY"）, 可选（"OPTIONAL"）
+以下关键词的定义和[RFC 2119][]保持一致： 必须（“MUST”）, 不能（“MUST NOT”）, 必须（“REQUIRED”）, 应该（“SHALL”）, 不应该（“SHALL NOT”）, 应该（“SHOULD”）,
+不应该（“SHOULD NOT”）, 推荐（“RECOMMENDED”）, 可以（“MAY”）, 可选（“OPTIONAL”）
 
 `实现者`（`implementor`）指的是任何一个实现了 `ContainerInterface` 的依赖注入相关的框架和类库。`用户`（`user`）指的是依赖注入容器（DIC）的使用者。
 
@@ -17,18 +17,17 @@
 
 #### 1.1.1 条目标识符
 
-一个条目表示符是一个合法的PHP字符串，长度至少为1，在一个容器实例中唯一表示了一条数据。条目标识符对容器调用者是不透明的，也就是说调用者**不应该（SHOULD NOT）**假设字符串有任何语法结构。
+一个条目标识符是一个合法的PHP字符串，长度至少为1，在一个容器实例中唯一标识一条数据。条目标识符对容器调用者是不透明的，也就是说调用者**不应该（SHOULD NOT）**假设字符串有任何语法结构。
 
 #### 1.1.2 从容器中读取数据
 
 - `Psr\Container\ContainerInterface` 暴露两个方法：`get` 和 `has`。
 - `get`严格接收一个参数：一个 **必须（MUST）** 是字符串的条目标识符。
-  `get`可以返回任何值，在容器条目未找到时，抛出一个`NotFoundExceptionInterface`异常。两次连续的`get`调用 **应该（SHOULD）** 返回同样的值，但是根据实现者或者用户的配置，返回不同的值也是可能的，所以用户 **不应该（SHOULD NOT）** 依赖两次调用返回相同值的行为。
+ `get`可以返回任何值，条目未在容器中找到时，抛出一个`NotFoundExceptionInterface`异常。两次连续的`get`调用 **应该（SHOULD）** 返回同样的值，但是根据实现者或者用户的配置，返回不同的值也是可能的，所以用户 **不应该（SHOULD NOT）** 依赖两次调用返回相同值的行为。
 
-- `has` takes one unique parameter: an entry identifier, which MUST be a string.
-  `has` MUST return `true` if an entry identifier is known to the container and `false` if it is not.
-  If `has($id)` returns false, `get($id)` MUST throw a `NotFoundExceptionInterface`.
-- `has`严格接收一个参数：一个**必须（MUST）**是字符串的条目标识符。
+- `has` 严格接收一个参数：一个**必须（MUST）**是字符串的条目标识符。
+  对应的条目在容器中存在时，`has` **必须（MUST）** 返回`true`，否则返回`false`。
+  如果`has($id)`返回false，`get($id)` **必须（MUST）** 抛出`NotFoundExceptionInterface`异常。
 
 ### 1.2 异常
 
@@ -40,20 +39,19 @@
 
 ### 1.3 推荐用法
 
-Users SHOULD NOT pass a container into an object so that the object can retrieve *its own dependencies*.
-This means the container is used as a [Service Locator](https://en.wikipedia.org/wiki/Service_locator_pattern)
-which is a pattern that is generally discouraged.
+用户 **不应该（SHOULD NOT）** 把容器传给对象，让对象自行去取*它的依赖*，
+这样的话容器就被用作了[服务定位器](https://en.wikipedia.org/wiki/Service_locator_pattern)，而这种模式一般是不推荐使用的。
 
-Please refer to section 4 of the META document for more details.
+请参照元文档的第四部分了解更多详情。
 
 ## 2. 包
 
-The interfaces and classes described as well as relevant exceptions are provided as part of the
-[psr/container](https://packagist.org/packages/psr/container) package.
+相关的接口，类和异常都包含在了此软件包中：
+[psr/container](https://packagist.org/packages/psr/container) 
 
-Packages providing a PSR container implementation should declare that they provide `psr/container-implementation` `1.0.0`.
+提供PSR容器实现的包应该声明他们提供了`psr/container-implementation` `1.0.0`。
 
-Projects requiring an implementation should require `psr/container-implementation` `1.0.0`.
+需要容器实现的项目应该require `psr/container-implementation` `1.0.0`。
 
 ## 3. 接口定义
 
@@ -65,30 +63,29 @@ Projects requiring an implementation should require `psr/container-implementatio
 namespace Psr\Container;
 
 /**
- * Describes the interface of a container that exposes methods to read its entries.
+ * 容器接口暴露的读取条目的方法
  */
 interface ContainerInterface
 {
     /**
-     * Finds an entry of the container by its identifier and returns it.
+     * 根据标识符找到返回条目。
      *
-     * @param string $id Identifier of the entry to look for.
+     * @param string $id 条目标识符
      *
-     * @throws NotFoundExceptionInterface  No entry was found for **this** identifier.
-     * @throws ContainerExceptionInterface Error while retrieving the entry.
+     * @throws NotFoundExceptionInterface  找不到这个标识符对应的条目。
+     * @throws ContainerExceptionInterface 取条目时发生的错误。
      *
-     * @return mixed Entry.
+     * @return mixed 条目
      */
     public function get($id);
 
     /**
-     * Returns true if the container can return an entry for the given identifier.
-     * Returns false otherwise.
+     * 如果能在容器中找到标识符对应的条目，返回true，否则返回false
      *
-     * `has($id)` returning true does not mean that `get($id)` will not throw an exception.
-     * It does however mean that `get($id)` will not throw a `NotFoundExceptionInterface`.
+     * `has($id)` 返回true不意味着`get($id)`不会抛异常，
+     * 但是保证`get($id)`不会抛`NotFoundExceptionInterface`异常。
      *
-     * @param string $id Identifier of the entry to look for.
+     * @param string $id 条目标识符。
      *
      * @return bool
      */
