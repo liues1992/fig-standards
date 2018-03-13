@@ -1,16 +1,16 @@
 翻译说明：
 ======
-此Github项目的目的是对FIG官方Github项目（ https://github.com/php-fig/fig-standards ）做全量的中文翻译并保持更新。
+此 GitHub 项目的目的是对 FIG 官方 GitHub 项目（ https://github.com/php-fig/fig-standards ）做「已通过」提案的中文翻译并保持更新。
 
 [所有PSR列表](https://github.com/liues1992/fig-standards/tree/master/index.md)
 
 术语
 ------------------------------------
-- interoperability 互通性
-- Framework Interoperability Group 框架互通性小组
-- vendor 组织名称
-- PHP Standard Recommendation PHP规范建议
-- fully-qualified class name 完全限定的类名
+- interoperability： 互通性
+- Framework Interoperability Group： 框架互通性小组
+- vendor： 组织名称
+- PHP Standard Recommendation： PHP 规范建议
+- fully-qualified class name： 完全限定的类名
 
 一些原则
 ------------------------------------
@@ -22,28 +22,28 @@
 PHP框架互通性小组（FIG）
 ====================================
 
-这个小组成立的目的是让各个项目的代表者讨论并寻找出各个项目的共性，以求能相互合作。我们的受众就是我们自己，但是我们也清楚其他PHP社区也在关注我们。我们欢迎其他人使用我们的成果，但是这不是主要目标。
+这个小组成立的目的是让各个项目的代表者讨论并寻找出各个项目的共性，以求能相互合作。我们的受众就是我们自己，但是我们也清楚其他 PHP 社区也在关注我们。我们欢迎其他人使用我们的成果，但是这不是主要目标。
 
 提交一个新的规范建议
 ------------------------------------
 
-提交一个PHP规范建议（PSR）的步骤：
+提交一个 PHP 规范建议（PSR）的步骤：
 
-- fork仓库https://github.com/php-fig/fig-standards ，创建一个分支，检出此分支, 添加PSR到
-  `proposed/`, 推送分支到Github，提交一个合并请求; 或者,
+- fork 仓库 https://github.com/php-fig/fig-standards ，创建一个分支，检出此分支, 添加 PSR 到
+   `proposed/`, 推送分支到Github，提交一个合并请求; 或者,
 
-- 在Github上创建一个Issue进行讨论；或者，
+- 在 GitHub 上 创建一个 issue 进行讨论；或者，
 
 - 在[邮件列表][]中进行讨论。
 
 [邮件列表]: http://groups.google.com/group/php-fig/
 
-GitHub使用
+GitHub 使用
 ------------
 
-所有PSR相关的讨论都在[邮件列表][]中进行。Github的Issue和合并请求不太会被关注，除非你在邮件列表里提及。出于同样的原因，对PSR的评审会在邮件列表而不是Github合并请求的评论中里进行。
+所有 PSR 相关的讨论都在[邮件列表][]中进行。Github 的 issue 和合并请求不太会被关注，除非你在邮件列表里提及。出于同样的原因，对 PSR 的评审会在邮件列表而不是 Github 合并请求的评论中里进行。
 
-请不要提一个Issue或者合并请求然后置之不理，否则它不太可能被处理。
+请不要提一个 issue 或者合并请求然后置之不理，否则它不太可能被处理。
 
 申请成为成员
 ---------------------
@@ -63,7 +63,7 @@ GitHub使用
 语言和翻译
 -----------------------
 
-所有PSR都是由英式英语或者美式英语编写（每个规范有所不同，但是同一个规范中是相同的）。PHP FIG不会提供官方的外语翻译，但是外部人员在遵循授权许可证的前提下可以自由进行翻译。
+所有 PSR 都是由英式英语或者美式英语编写（每个规范有所不同，但是同一个规范中是相同的）。PHP FIG 不会提供官方的外语翻译，但是外部人员在遵循授权许可证的前提下可以自由进行翻译。
 
 投票成员
 --------------
