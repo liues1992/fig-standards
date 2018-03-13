@@ -13,8 +13,7 @@ to place files that will be autoloaded according to the specification.
 
 ## 2. 规范
 
-1. The term "class" refers to classes, interfaces, traits, and other similar
-   structures.
+1. 名词『类』包括class，interface，trait，以及其他相似的结构。
 
 2. A fully qualified class name has the following form:
 
