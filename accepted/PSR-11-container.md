@@ -4,8 +4,8 @@
 
 `ContainerInterface`的目标：制定PHP框架和库中，从容器获得对象和参数的的标准（在此文中叫做条目`entry`）。
 
-以下关键词的定义和[RFC 2119][]保持一致： 必须（“MUST”）, 不能（“MUST NOT”）, 必须（“REQUIRED”）, 应该（“SHALL”）, 不应该（“SHALL NOT”）, 应该（“SHOULD”）,
-不应该（“SHOULD NOT”）, 推荐（“RECOMMENDED”）, 可以（“MAY”）, 可选（“OPTIONAL”）
+以下关键词的定义和[RFC 2119][]保持一致： 必须（MUST）, 不能（MUST NOT）, 必须（REQUIRED）, 应该（SHALL）, 不应该（SHALL NOT）, 应该（SHOULD）,
+不应该（SHOULD NOT）, 推荐（RECOMMENDED）, 可以（MAY）, 可选（OPTIONAL）
 
 `实现者`（`implementor`）指的是任何一个实现了 `ContainerInterface` 的依赖注入相关的框架和类库。`用户`（`user`）指的是依赖注入容器（DIC）的使用者。
 

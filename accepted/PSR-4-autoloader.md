@@ -4,14 +4,14 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-## 1. Overview
+## 1. 概述
 
 This PSR describes a specification for [autoloading][] classes from file
 paths. It is fully interoperable, and can be used in addition to any other
 autoloading specification, including [PSR-0][]. This PSR also describes where
 to place files that will be autoloaded according to the specification.
 
-## 2. Specification
+## 2. 规范
 
 1. The term "class" refers to classes, interfaces, traits, and other similar
    structures.
@@ -54,10 +54,11 @@ to place files that will be autoloaded according to the specification.
 4. Autoloader implementations MUST NOT throw exceptions, MUST NOT raise errors
    of any level, and SHOULD NOT return a value.
 
-## 3. Examples
+## 3. 示例
 
 The table below shows the corresponding file path for a given fully qualified
 class name, namespace prefix, and base directory.
+以下表格展示了根据完全限定的类名，命名空间前缀和基本目录找到相对应的目录。
 
 | Fully Qualified Class Name    | Namespace Prefix   | Base Directory           | Resulting File Path
 | ----------------------------- |--------------------|--------------------------|-------------------------------------------
