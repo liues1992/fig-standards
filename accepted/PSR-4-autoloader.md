@@ -1,11 +1,11 @@
 # 自动加载器
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
+以下关键词的定义和 [RFC 2119][] 保持一致： 必须（MUST）, 不能（MUST NOT）, 必须（REQUIRED）, 应该（SHALL）, 不应该（SHALL NOT）, 应该（SHOULD）,
+不应该（SHOULD NOT）, 推荐（RECOMMENDED）, 可以（MAY）, 可选（OPTIONAL）。
 
 ## 1. 概述
 
+这个 PSR 描述了根据文件路径加载类的规范。它是完全可互操作的，可以在其他自动加载规范（包括PSR-0）的同时使用此规范。此 PSR 描述了如何根据
 This PSR describes a specification for [autoloading][] classes from file
 paths. It is fully interoperable, and can be used in addition to any other
 autoloading specification, including [PSR-0][]. This PSR also describes where

@@ -4,9 +4,8 @@ This section of the standard comprises what should be considered the standard
 coding elements that are required to ensure a high level of technical
 interoperability between shared PHP code.
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119].
+以下关键词的定义和 [RFC 2119][] 保持一致： 必须（MUST）, 不能（MUST NOT）, 必须（REQUIRED）, 应该（SHALL）, 不应该（SHALL NOT）, 应该（SHOULD）,
+不应该（SHOULD NOT）, 推荐（RECOMMENDED）, 可以（MAY）, 可选（OPTIONAL）。
 
 [RFC 2119]: http://www.ietf.org/rfc/rfc2119.txt
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
@@ -22,9 +21,9 @@ interpreted as described in [RFC 2119].
   *or* cause side-effects (e.g. generate output, change .ini settings, etc.)
   but SHOULD NOT do both.
 
-- 命名空间和类**必须（MUST）**遵循自动加载规范[[PSR-0], [PSR-4]]。
+- 命名空间和类**必须**遵循自动加载规范[[PSR-0], [PSR-4]]。
 
-- 类名**必须（MUST）**是首字母大写驼峰式（`StudlyCaps`）命名。
+- 类名**必须**是首字母大写驼峰式（`StudlyCaps`）命名。
 
 - 类常量**必须**是全大写，用下划线分开。
 
@@ -34,12 +33,11 @@ interpreted as described in [RFC 2119].
 
 ### 2.1. PHP标签
 
-PHP code MUST use the long `<?php ?>` tags or the short-echo `<?= ?>` tags; it
-MUST NOT use the other tag variations.
+PHP 代码**必须**使用长标签 `<?php ?>` 或者短标签 `<?= ?>`，**不能** 使用其他标签变种。
 
 ### 2.2. 字符编码
 
-PHP code MUST use only UTF-8 without BOM.
+PHP 代码**必须**使用不带 BOM 的 UTF-8 编码。
 
 ### 2.3. 副作用
 
@@ -134,11 +132,11 @@ class Vendor_Model_Foo
 ## 4. 类的常量属性和方法
 
 The term "class" refers to all classes, interfaces, and traits.
+术语『类』包括class，interface 和 trait。
 
 ### 4.1. 常量
 
-For example:
-类常量**必须（MUST）**是全部大写，下划线作为分隔符。
+类常量**必须**是全部大写，下划线作为分隔符。
 例如：
 
 ~~~php
@@ -154,12 +152,9 @@ class Foo
 
 ### 4.2. 属性
 
-This guide intentionally avoids any recommendation regarding the use of
-`$StudlyCaps`, `$camelCase`, or `$under_score` property names.
+这个指南刻意没有去规定属性的命名风格应该是大写驼峰 (`$StudlyCaps`)，小写驼峰 (`$camelCase`) 还是下划线 (`$under_score`)。
 
-Whatever naming convention is used SHOULD be applied consistently within a
-reasonable scope. That scope may be vendor-level, package-level, class-level,
-or method-level.
+但是不管是什么命名风格，**应该**在一定范围内保持一致。这个范围可以是组织名称级别，包级别，类级别或者方法级别。
 
 ### 4.3. 方法
 
