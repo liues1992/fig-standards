@@ -1,8 +1,6 @@
 # 基础代码规范
 
-This section of the standard comprises what should be considered the standard
-coding elements that are required to ensure a high level of technical
-interoperability between shared PHP code.
+此规范包含了一些基本编码要素，以便共享的 PHP 代码 能代码实现高度技术互通性。
 
 以下关键词的定义和 [RFC 2119][] 保持一致： 必须（MUST）, 不能（MUST NOT）, 必须（REQUIRED）, 应该（SHALL）, 不应该（SHALL NOT）, 应该（SHOULD）,
 不应该（SHOULD NOT）, 推荐（RECOMMENDED）, 可以（MAY）, 可选（OPTIONAL）。
@@ -17,9 +15,7 @@ interoperability between shared PHP code.
 
 - PHP代码文件**必须（MUST）**只使用不带BOM的UTF-8编码。
 
-- Files SHOULD *either* declare symbols (classes, functions, constants, etc.)
-  *or* cause side-effects (e.g. generate output, change .ini settings, etc.)
-  but SHOULD NOT do both.
+- 一个文件 **应该** 要么声明符号（类，函数，常量等），要么产生副作用（例如产生输出，改变 .ini 配置），但是 **不应该** 两者都做。
 
 - 命名空间和类**必须**遵循自动加载规范[[PSR-0], [PSR-4]]。
 
@@ -41,56 +37,47 @@ PHP 代码**必须**使用不带 BOM 的 UTF-8 编码。
 
 ### 2.3. 副作用
 
-A file SHOULD declare new symbols (classes, functions, constants,
-etc.) and cause no other side effects, or it SHOULD execute logic with side
-effects, but SHOULD NOT do both.
+一个文件要么声明新符号（类，函数，常量等），要么执行产生副作用的逻辑，但是 **不应该** 两者都做。
 
-The phrase "side effects" means execution of logic not directly related to
-declaring classes, functions, constants, etc., *merely from including the
-file*.
+「副作用」 意味着逻辑的执行和类，方法，常量没有直接关联，例如，*只在include这个文件时执行逻辑。*
 
-"Side effects" include but are not limited to: generating output, explicit
-use of `require` or `include`, connecting to external services, modifying ini
-settings, emitting errors or exceptions, modifying global or static variables,
-reading from or writing to a file, and so on.
+「副作用」 包括但不限于：产生输出，显式地使用 `require` 或者 `include`，连接外部服务，修改ini设置，产生错误或者异常，修改全局变量或者静态变量，读写文件等等。
 
-The following is an example of a file with both declarations and side effects;
-i.e, an example of what to avoid:
+以下是一个既有声明又有副作用的例子，应当是尽量避免的。
 
 ~~~php
 <?php
-// side effect: change ini settings
+// 副作用：改变 ini 设置
 ini_set('error_reporting', E_ALL);
 
-// side effect: loads a file
+// 副作用：加载一个文件
 include "file.php";
 
-// side effect: generates output
+// 副作用：产生输出
 echo "<html>\n";
 
-// declaration
+// 声明
 function foo()
 {
-    // function body
+    // 函数体
 }
 ~~~
 
-The following example is of a file that contains declarations without side
-effects; i.e., an example of what to emulate:
+以下是一个文件只有声明没有副作用的例子。可以作为一个范例。
 
 ~~~php
 <?php
-// declaration
+// 声明
 function foo()
 {
-    // function body
+    // 函数体
 }
 
-// conditional declaration is *not* a side effect
+// 条件性声明 *不是* 副作用
 if (! function_exists('bar')) {
     function bar()
     {
-        // function body
+        // 函数体
     }
 }
 ~~~
