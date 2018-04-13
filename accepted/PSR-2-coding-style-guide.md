@@ -1,10 +1,12 @@
 # 代码风格指南
 
 This guide extends and expands on [PSR-1], the basic coding standard.
+这个指南是 [PSR-1]（基本编码规范）的扩展。
 
 The intent of this guide is to reduce cognitive friction when scanning code
 from different authors. It does so by enumerating a shared set of rules and
 expectations about how to format PHP code.
+此指南意图是在浏览不同作者的代码时，降低认知成本。它列举了一些格式化 PHP 代码的规则。
 
 The style rules herein are derived from commonalities among the various member
 projects. When various authors collaborate across multiple projects, it helps
