@@ -11,29 +11,29 @@
 
 ## 1. 概述
 
-- 文件**必须（MUST）**只使用 `<?php` 和 `<?=` 标签.
+- 文件 **必须** 只使用 `<?php` 和 `<?=` 标签。
 
-- PHP代码文件**必须（MUST）**只使用不带BOM的UTF-8编码。
+- PHP代码文件 **必须** 使用不带BOM的UTF-8编码。
 
 - 一个文件 **应该** 要么声明符号（类，函数，常量等），要么产生副作用（例如产生输出，改变 .ini 配置），但是 **不应该** 两者都做。
 
-- 命名空间和类**必须**遵循自动加载规范[[PSR-0], [PSR-4]]。
+- 命名空间和类 **必须** 遵循自动加载规范[[PSR-0], [PSR-4]]。
 
-- 类名**必须**是首字母大写驼峰式（`StudlyCaps`）命名。
+- 类名 **必须** 是首字母大写驼峰式（`StudlyCaps`）命名。
 
-- 类常量**必须**是全大写，用下划线分开。
+- 类常量 **必须** 是全大写，用下划线分开。
 
-- 方法**必须**x是首字母小写驼峰式（`camelCase`）命名。
+- 方法 **必须** 是首字母小写驼峰式（`camelCase`）命名。
 
 ## 2. 文件
 
 ### 2.1. PHP标签
 
-PHP 代码**必须**使用长标签 `<?php ?>` 或者短标签 `<?= ?>`，**不能** 使用其他标签变种。
+PHP 代码 **必须** 使用长标签 `<?php ?>` 或者短标签 `<?= ?>`，**不能** 使用其他标签变种。
 
 ### 2.2. 字符编码
 
-PHP 代码**必须**使用不带 BOM 的 UTF-8 编码。
+PHP 代码 **必须** 使用不带 BOM 的 UTF-8 编码。
 
 ### 2.3. 副作用
 
@@ -84,16 +84,15 @@ if (! function_exists('bar')) {
 
 ## 3. 命名空间和类名
 
-Namespaces and classes MUST follow an "autoloading" PSR: [[PSR-0], [PSR-4]].
+命名空间和类 **必须** 遵守一个「自动加载」PSR：[[PSR-0], [PSR-4]]。
 
-This means each class is in a file by itself, and is in a namespace of at
-least one level: a top-level vendor name.
+这意味着一个类既在一个文件中，也在一个至少有一级（组织名称级）的命名空间中。
 
-Class names MUST be declared in `StudlyCaps`.
+类名 **必须** 是大写驼峰式(`StudlyCaps`)命名。
 
-Code written for PHP 5.3 and after MUST use formal namespaces.
+PHP 5.3 以后的代码 **必须** 使用正式命名空间。
 
-For example:
+例如：
 
 ~~~php
 <?php
@@ -105,8 +104,8 @@ class Foo
 }
 ~~~
 
-Code written for 5.2.x and before SHOULD use the pseudo-namespacing convention
-of `Vendor_` prefixes on class names.
+
+5.2.x 及以前的代码 **应该** 使用伪命名空间，使用 `组织名称_` 作为类名前缀。
 
 ~~~php
 <?php
@@ -118,8 +117,7 @@ class Vendor_Model_Foo
 
 ## 4. 类的常量属性和方法
 
-The term "class" refers to all classes, interfaces, and traits.
-术语『类』包括class，interface 和 trait。
+术语「类」包括class，interface 和 trait。
 
 ### 4.1. 常量
 
