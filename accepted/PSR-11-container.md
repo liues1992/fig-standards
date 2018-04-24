@@ -17,29 +17,29 @@
 
 #### 1.1.1 条目标识符
 
-一个条目标识符是一个合法的PHP字符串，长度至少为 1，在一个容器实例中唯一标识一条数据。条目标识符对容器调用者是不透明的，也就是说调用者 **不应该（SHOULD NOT）** 假设字符串有任何语法结构。
+一个条目标识符是一个合法的PHP字符串，长度至少为 1，在一个容器实例中唯一标识一条数据。条目标识符对容器调用者是不透明的，也就是说调用者 **不应该** 假设字符串有任何语法结构。
 
 #### 1.1.2 从容器中读取数据
 
 - `Psr\Container\ContainerInterface` 暴露两个方法：`get` 和 `has`。
-- `get` 严格接收一个参数：一个 **必须（MUST）** 是字符串的条目标识符。
- `get` 可以返回任何值，条目未在容器中找到时，抛出一个 `NotFoundExceptionInterface` 异常。两次连续的 `get` 调用 **应该（SHOULD）** 返回同样的值，但是根据实现者或者用户的配置，返回不同的值也是可能的，所以用户 **不应该（SHOULD NOT）** 依赖两次调用返回相同值的行为。
+- `get` 严格接收一个参数：一个 **必须** 是字符串的条目标识符。
+ `get` 可以返回任何值，条目未在容器中找到时，抛出一个 `NotFoundExceptionInterface` 异常。两次连续的 `get` 调用 **应该** 返回同样的值，但是根据实现者或者用户的配置，返回不同的值也是可能的，所以用户 **不应该** 依赖两次调用返回相同值的行为。
 
-- `has` 严格接收一个参数：一个 **必须（MUST）** 是字符串的条目标识符。
-  对应的条目在容器中存在时，`has` **必须（MUST）** 返回 `true`，否则返回 `false`。
-  如果 `has($id)` 返回false，`get($id)` **必须（MUST）** 抛出 `NotFoundExceptionInterface` 异常。
+- `has` 严格接收一个参数：一个 **必须** 是字符串的条目标识符。
+  对应的条目在容器中存在时，`has` **必须** 返回 `true`，否则返回 `false`。
+  如果 `has($id)` 返回false，`get($id)` **必须** 抛出 `NotFoundExceptionInterface` 异常。
 
 ### 1.2 异常
 
-容器所抛出的异常 **应该（SHOULD）** 实现
+容器所抛出的异常 **应该** 实现
 [`Psr\Container\ContainerExceptionInterface`](#container-exception).
 
-`get` 被调用，而条目未找到时，**必须（MUST）** 抛出一个实现了此接口的异常：
+`get` 被调用，而条目未找到时，**必须** 抛出一个实现了此接口的异常：
 [`Psr\Container\NotFoundExceptionInterface`](#not-found-exception).
 
 ### 1.3 推荐用法
 
-用户 **不应该（SHOULD NOT）** 把容器传给对象，让对象自行去取*它的依赖*，
+用户 **不应该** 把容器传给对象，让对象自行去取*它的依赖*，
 这样的话容器就被用作了[服务定位器](https://en.wikipedia.org/wiki/Service_locator_pattern)，而这种模式一般是不推荐使用的。
 
 请参照元文档的第四部分了解更多详情。
