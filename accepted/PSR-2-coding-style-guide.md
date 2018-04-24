@@ -16,34 +16,24 @@
 
 ## 1. 概述
 
-- Code MUST follow a "coding style guide" PSR [[PSR-1]].
+- 代码 **必须** 遵循「代码风格指南」PSR [[PSR-1]]。
 
-- Code MUST use 4 spaces for indenting, not tabs.
+- 代码 **必须** 使用4个空格来缩进，而不是使用tab。
 
-- There MUST NOT be a hard limit on line length; the soft limit MUST be 120
-  characters; lines SHOULD be 80 characters or less.
+- 对于行的长度 **不能** 有硬限制；软限制 **必须** 是120个字符。一行 **应该** 少于80个字符。
 
-- There MUST be one blank line after the `namespace` declaration, and there
-  MUST be one blank line after the block of `use` declarations.
+- `namespace` 声明下面 **必须** 空一行。`use` 代码块后面 **必须** 空一行。
 
-- Opening braces for classes MUST go on the next line, and closing braces MUST
-  go on the next line after the body.
+- 类的首括号 **必须** 另起一行，类的尾括号 **必须** 在类体后面一行。
 
-- Opening braces for methods MUST go on the next line, and closing braces MUST
-  go on the next line after the body.
+- 所有的类属性和类方法 **必须** 声明可见性；`abstract` and
+  `final` 关键字 **必须** 在可见性声明之前；`static` **必须** 声明在可见性之后。
 
-- Visibility MUST be declared on all properties and methods; `abstract` and
-  `final` MUST be declared before the visibility; `static` MUST be declared
-  after the visibility.
+- 控制结构的关键字后面 **必须** 有一个空格；方法和函数调用后面 **不能** 有空格。
 
-- Control structure keywords MUST have one space after them; method and
-  function calls MUST NOT.
+- 控制结构的首括号 **必须** 不换行，尾括号 **必须** 在控制体下面一行。
 
-- Opening braces for control structures MUST go on the same line, and closing
-  braces MUST go on the next line after the body.
-
-- Opening parentheses for control structures MUST NOT have a space after them,
-  and closing parentheses for control structures MUST NOT have a space before.
+- 控制结构的首小括号后面以及尾小括号前面 **不能** 有空格，
 
 ### 1.1. 示例
 
