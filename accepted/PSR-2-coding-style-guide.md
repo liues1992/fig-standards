@@ -1,22 +1,14 @@
 # 代码风格指南
 
-This guide extends and expands on [PSR-1], the basic coding standard.
-这个指南是 [PSR-1]（基本编码规范）的扩展。
+这个指南是对 [PSR-1]（基本编码规范）的继承和扩展。
 
-The intent of this guide is to reduce cognitive friction when scanning code
-from different authors. It does so by enumerating a shared set of rules and
-expectations about how to format PHP code.
-此指南意图是在浏览不同作者的代码时，降低认知成本。它列举了一些格式化 PHP 代码的规则。
+此指南旨在降低浏览不同作者的代码时的认知成本。它列举了一些格式化 PHP 代码的规则。
 
-The style rules herein are derived from commonalities among the various member
-projects. When various authors collaborate across multiple projects, it helps
-to have one set of guidelines to be used among all those projects. Thus, the
-benefit of this guide is not in the rules themselves, but in the sharing of
-those rules.
+此代码风格从多个成员项目的代码总结而来。它帮助多个合作的项目建立共同的编码指南。因此，这些规则的用处并不在于自身，而在于他们能被共享。
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119].
+以下关键词的定义和 [RFC 2119][] 保持一致： 必须（MUST）, 不能（MUST NOT）, 必须（REQUIRED）, 应该（SHALL）, 不应该（SHALL NOT）, 应该（SHOULD）,
+不应该（SHOULD NOT）, 推荐（RECOMMENDED）, 可以（MAY）, 可选（OPTIONAL）。
+
 
 [RFC 2119]: http://www.ietf.org/rfc/rfc2119.txt
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
