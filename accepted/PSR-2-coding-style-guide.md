@@ -37,7 +37,7 @@
 
 ### 1.1. 示例
 
-This example encompasses some of the rules below as a quick overview:
+一下是一些规则的代码示例：
 
 ~~~php
 <?php
@@ -71,32 +71,29 @@ class Foo extends Bar implements FooInterface
 
 ### 2.1. 基本编码规范
 
-Code MUST follow all rules outlined in [PSR-1].
+代码 **必须** 遵循所有的[PSR-1]规范 。
 
 ### 2.2. 文件
 
-All PHP files MUST use the Unix LF (linefeed) line ending.
+所有的 PHP 文件 **必须** 使用 Unix LF 换行符。
 
-All PHP files MUST end with a single blank line.
+所有的 PHP 文件结尾 **必须** 有空行。
 
-The closing `?>` tag MUST be omitted from files containing only PHP.
+在只包含 PHP 代码的文件里，**不能** 使用结束标签 `?>` 。
 
 ### 2.3. 行
 
-There MUST NOT be a hard limit on line length.
+行的长度 **不能** 有硬限制。
 
-The soft limit on line length MUST be 120 characters; automated style checkers
-MUST warn but MUST NOT error at the soft limit.
+行的长度的软限制 **必须** 是120个字符；自动风格检查器 **必须** 对超过软限制的行警告，但是 **不能** 报错。
 
-Lines SHOULD NOT be longer than 80 characters; lines longer than that SHOULD
-be split into multiple subsequent lines of no more than 80 characters each.
+一行 **不应该** 超过80个字符；超过80个字符的行 **应该** 拆成多行。
 
-There MUST NOT be trailing whitespace at the end of non-blank lines.
+非空行的结尾 **不能** 有空格。
 
-Blank lines MAY be added to improve readability and to indicate related
-blocks of code.
+为了提高代码的可读性，区分代码块，**可以** 插入空行。
 
-There MUST NOT be more than one statement per line.
+每行 **不能** 超过一个语句。
 
 ### 2.4. 缩进
 
